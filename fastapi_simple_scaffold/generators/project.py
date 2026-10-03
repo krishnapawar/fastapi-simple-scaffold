@@ -1365,6 +1365,7 @@ python-multipart>=0.0.9
 httpx>=0.27.0
 pytest>=8.1.0
 pytest-asyncio>=0.23.5
+fastapi-simple-scaffold>=1.0.0
 '''
     )
 

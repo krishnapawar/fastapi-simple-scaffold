@@ -6,48 +6,59 @@
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Step 1: Setup Virtual Environment & Install CLI
 
-### Installation via `pip`
+Create and activate a virtual environment, then install `fastapi-simple-scaffold`:
 
 ```bash
+# Windows (PowerShell / Command Prompt)
+python -m venv venv
+venv\Scripts\activate
+
+# macOS / Linux
+python3 -m venv venv
+source venv/bin/activate
+
+# Install CLI Generator
 pip install fastapi-simple-scaffold
 ```
 
-After installation, you can run generator commands using the CLI shortcut:
-- `fastapi-scaffold [command]` (or `fscaffold [command]`)
-
-> 💡 **Note:** If running via `python -m`, use underscores for the Python module name:
-> `python -m fastapi_simple_scaffold.cli [command]`
-
-
+> 💡 **Note:** Once installed, you can use `fastapi-scaffold` (or shortcut `fscaffold`). If running in a global environment without PATH configured, use `python -m fastapi_simple_scaffold.cli [command]` as fallback.
 
 ---
 
-## 🚀 Creating a New FastAPI Project
+## 🚀 Step 2: Create a New FastAPI Project
+
+Generate a complete modular backend project:
 
 ```bash
 # Create project structure in a new directory:
 fastapi-scaffold my-api
 
-# Or create inside the current working directory:
+# Or initialize structure inside current working directory:
 cd my-api
 fastapi-scaffold structure
 ```
 
-Once generated, start your server in 2 commands:
+---
+
+## 🏁 Step 3: Install Project Dependencies & Run Server
+
+Navigate into your newly scaffolded project directory, install its dependencies, and start the development server:
+
 ```bash
 cd my-api
 pip install -r requirements.txt
 python run.py
 ```
+
 Your API with Swagger UI is live at: **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)** 🎉
 
 ---
 
-## 🛠️ CLI Generator Commands
+## 🛠️ Step 4: Generator Commands (Scaffold Components On-the-Fly)
 
-Run generator commands directly inside your scaffolded project:
+Once inside your project directory (`cd my-api`), use generator commands to build resources, modules, models, and services:
 
 ```bash
 # Launch interactive CLI Dashboard Studio
@@ -73,6 +84,9 @@ fastapi-scaffold make:middleware RateLimiter
 
 # Generate a timestamped Alembic database migration
 fastapi-scaffold make:migration create_orders_table
+
+# Apply pending database migrations
+fastapi-scaffold db:migrate
 
 # Generate a database seeder script
 fastapi-scaffold make:seeder Product
@@ -111,6 +125,7 @@ fastapi-scaffold doctor
 | `make:service <Name>` | `make:service Payment` | Generates a service class |
 | `make:middleware <Name>` | `make:middleware Auth` | Generates custom Starlette/FastAPI middleware |
 | `make:migration <Name>` | `make:migration add_orders` | Generates timestamped Alembic migration revision |
+| `db:migrate` | `db:upgrade` | Applies all pending Alembic database migrations |
 | `make:seeder <Name>` | `make:seed <Name>` | Generates database seeder script |
 | `make:relation <Src> <Tgt>` | `make:association User Order` | Scaffolds model foreign key relationship |
 | `make:notification <Name>` | `make:email <Name>` | Generates email notification service and HTML template |
