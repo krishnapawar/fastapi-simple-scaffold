@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapi-simple-scaffold"
+version = "1.0.1"
+description = "Modular FastAPI REST API starter with CLI scaffolding and code generation for modules, models, routers, services, middleware, migrations, relations, cron jobs, seeders, and tests."
+
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+
+    { name = "Krishna Pawar" }
+]
+keywords = [
+    "fastapi",
+    "scaffold",
+    "scaffolding",
+    "generator",
+    "cli",
+    "sqlalchemy",
+    "alembic",
+    "rest-api",
+    "boilerplate",
+    "pydantic"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+]
+
+dependencies = [
+    "rich>=12.0.0"
+]
+
+[project.scripts]
+fastapi-simple-scaffold = "fastapi_simple_scaffold.cli:main"
+fastapi-scaffold = "fastapi_simple_scaffold.cli:main"
+fscaffold = "fastapi_simple_scaffold.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/krishnapawar/fastapi-simple-scaffold"
+Repository = "https://github.com/krishnapawar/fastapi-simple-scaffold.git"
+Issues = "https://github.com/krishnapawar/fastapi-simple-scaffold/issues"
