@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fastapi-simple-scaffold"
-version = "1.0.1"
+version = "1.0.2"
 description = "Modular FastAPI REST API starter with CLI scaffolding and code generation for modules, models, routers, services, middleware, migrations, relations, cron jobs, seeders, and tests."
 
 readme = "README.md"
